@@ -12,7 +12,6 @@ public interface SkyblockHook {
      *
      * @param uuid the user's uuid
      * @param loc  the user's location (can be different from the uuid's location) and can be null
-     *
      * @return island level by player uuid, extra provided with the location, or null (value of 0)
      */
     double getIslandLevel(UUID uuid, Location loc);
@@ -21,7 +20,6 @@ public interface SkyblockHook {
      * Gets the island owner's uuid on this location.
      *
      * @param loc the current location
-     *
      * @return the owner's uuid on this island, or null if found none
      */
     UUID getIslandOwner(Location loc);
@@ -29,9 +27,8 @@ public interface SkyblockHook {
     /**
      * Gets the island owner's uuid with the given uuid.
      *
-     * @param uuid the player's uuid
+     * @param uuid  the player's uuid
      * @param world the island's world
-     *
      * @return the owner's uuid on this island, or null if found none
      */
     UUID getIslandOwner(UUID uuid, World world);
@@ -39,9 +36,8 @@ public interface SkyblockHook {
     /**
      * Gets the uuid list of island members
      *
-     * @param uuid the player's uuid
+     * @param uuid  the player's uuid
      * @param world the island's world
-     *
      * @return the uuid list of island members
      */
     List<UUID> getMembers(UUID uuid, World world);

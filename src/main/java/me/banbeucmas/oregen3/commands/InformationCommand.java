@@ -17,7 +17,7 @@ import static me.banbeucmas.oregen3.util.StringParser.PLACEHOLDER_PLAYER_PATTERN
 
 public class InformationCommand extends AbstractCommand {
     Oregen3 plugin;
-    
+
     InformationCommand(Oregen3 plugin, final CommandSender sender, final String label, final String[] args) {
         super(plugin, "oregen3.information", sender, label, args);
         this.plugin = plugin;
@@ -45,8 +45,7 @@ public class InformationCommand extends AbstractCommand {
             }
             if (player.isOnline()) {
                 p = player.getPlayer();
-            }
-            else {
+            } else {
                 final UUID uuid = player.getUniqueId();
                 World world = null;
                 if (!plugin.getHook().isIslandWorldSingle() && args.length < 3) {

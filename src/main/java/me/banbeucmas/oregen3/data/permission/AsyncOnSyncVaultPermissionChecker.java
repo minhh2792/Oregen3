@@ -37,8 +37,7 @@ public class AsyncOnSyncVaultPermissionChecker implements PermissionChecker, Lis
                 list.add(permission);
             else if (list.contains(permission) && !plugin.getPerm().playerHas(player.getPlayer(), permission))
                 list.remove(permission);
-        }
-        else {
+        } else {
             plugin.getUtils().runAsyncTask(() -> {
                 if (!list.contains(permission) && plugin.getPerm().playerHas(world, player, permission))
                     list.add(permission);

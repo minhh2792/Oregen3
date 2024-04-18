@@ -24,10 +24,6 @@ public class BlockChecker {
         this.plugin = plugin;
     }
 
-    public boolean isBlock(final Block b) {
-        return XBlock.isOneOf(b, plugin.getConfig().getStringList("blocks"));
-    }
-
     public static boolean isSurroundedByWater(final Location loc) {
         final World world = loc.getWorld();
         final int x = loc.getBlockX();
@@ -37,5 +33,9 @@ public class BlockChecker {
                 XBlock.isWater(world.getBlockAt(x - 1, y, z).getType()) ||
                 XBlock.isWater(world.getBlockAt(x, y, z + 1).getType()) ||
                 XBlock.isWater(world.getBlockAt(x, y, z - 1).getType());
+    }
+
+    public boolean isBlock(final Block b) {
+        return XBlock.isOneOf(b, plugin.getConfig().getStringList("blocks"));
     }
 }

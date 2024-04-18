@@ -30,9 +30,11 @@ public class Generator {
     private Map<String, Double> random;
 
     private transient double totalChance;
-    @Getter(value = AccessLevel.NONE) @Setter(value = AccessLevel.NONE)
+    @Getter(value = AccessLevel.NONE)
+    @Setter(value = AccessLevel.NONE)
     private transient BlockPlacer[] blockPlacers;
-    @Getter(value = AccessLevel.NONE) @Setter(value = AccessLevel.NONE)
+    @Getter(value = AccessLevel.NONE)
+    @Setter(value = AccessLevel.NONE)
     private transient Double[] chances;
 
     Generator(Oregen3 plugin, final String id) {
@@ -41,18 +43,18 @@ public class Generator {
 
         name = Objects.requireNonNull(path).getString("name", id);
         permission = path.getString("permission", "oregen3.generator." + id);
-        priority   = path.getLong("priority", 0);
-        level      = path.getDouble("level", 0);
+        priority = path.getLong("priority", 0);
+        level = path.getDouble("level", 0);
         if (path.isSet("sound")) {
             soundEnabled = path.getBoolean("sound.enabled", true);
-            sound        = XSound.matchXSound(path.getString("sound.name", "BLOCK_FIRE_EXTINGUISH")).map(XSound::parseSound).orElse(XSound.BLOCK_FIRE_EXTINGUISH.parseSound());
-            soundVolume  = (float) path.getDouble("sound.volume", 1);
-            soundPitch   = (float) path.getDouble("sound.pitch", 1);
+            sound = XSound.matchXSound(path.getString("sound.name", "BLOCK_FIRE_EXTINGUISH")).map(XSound::parseSound).orElse(XSound.BLOCK_FIRE_EXTINGUISH.parseSound());
+            soundVolume = (float) path.getDouble("sound.volume", 1);
+            soundPitch = (float) path.getDouble("sound.pitch", 1);
         }
         if (path.isSet("world")) {
-            worldEnabled   = true;
+            worldEnabled = true;
             worldBlacklist = path.getBoolean("world.blacklist", true);
-            worldList      = new LinkedHashSet<>(path.getStringList("world.list"));
+            worldList = new LinkedHashSet<>(path.getStringList("world.list"));
         }
         random = new LinkedHashMap<>();
         for (final String mat : Objects.requireNonNull(path.getConfigurationSection("random")).getKeys(false)) {

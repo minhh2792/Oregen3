@@ -14,8 +14,7 @@ public class NormalBlockPlaceTask extends BlockPlaceTask {
         this.plugin = plugin;
         if (plugin.getBlockEventHandler().isAsync()) {
             placeTask = new SyncBlockPlaceTask();
-        }
-        else {
+        } else {
             placeTask = new DefaultBlockPlaceTask();
         }
     }
@@ -29,6 +28,7 @@ public class NormalBlockPlaceTask extends BlockPlaceTask {
         public SyncBlockPlaceTask() {
             super(plugin);
         }
+
         @Override
         public void placeBlock(Block block, BlockPlacer blockPlacer) {
             Bukkit.getScheduler().runTask(plugin, () -> place(block, blockPlacer));
@@ -39,6 +39,7 @@ public class NormalBlockPlaceTask extends BlockPlaceTask {
         public DefaultBlockPlaceTask() {
             super(plugin);
         }
+
         @Override
         public void placeBlock(Block block, BlockPlacer blockPlacer) {
             place(block, blockPlacer);

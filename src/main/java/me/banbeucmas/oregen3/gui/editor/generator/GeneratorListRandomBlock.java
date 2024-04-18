@@ -38,20 +38,16 @@ public class GeneratorListRandomBlock extends PagedInventory<Map.Entry<String, D
         if (material.startsWith("oraxen-")) {
             if (Bukkit.getPluginManager().isPluginEnabled("Oraxen")) {
                 item = new ItemBuilder(OraxenItems.getItemById(material.substring(7)).build());
-            }
-            else {
+            } else {
                 item = new ItemBuilder(XMaterial.PAPER.parseItem()).setName(material.substring(7));
             }
-        }
-        else if (material.startsWith("itemsadder-")) {
+        } else if (material.startsWith("itemsadder-")) {
             if (Bukkit.getPluginManager().isPluginEnabled("ItemsAdder")) {
                 item = new ItemBuilder(CustomBlock.getInstance(material.substring(11)).getItemStack());
-            }
-            else {
+            } else {
                 item = new ItemBuilder(XMaterial.PAPER.parseItem()).setName(material.substring(11));
             }
-        }
-        else {
+        } else {
             item = new ItemBuilder(XMaterial.matchXMaterial(material).orElse(XMaterial.COBBLESTONE).parseItem());
         }
 
@@ -69,8 +65,7 @@ public class GeneratorListRandomBlock extends PagedInventory<Map.Entry<String, D
             plugin.getChatListener().addChatAction(event.getWhoClicked(), (msg) -> {
                 if (msg.equals("cancel")) {
                     event.getWhoClicked().sendMessage("Cancelled");
-                }
-                else {
+                } else {
                     try {
                         double chance = Double.parseDouble(msg);
                         plugin.getConfigManager().setConfig(config -> config.set("generators." + generator.getId() + ".random." + content.getKey(), chance));
@@ -81,8 +76,7 @@ public class GeneratorListRandomBlock extends PagedInventory<Map.Entry<String, D
                 }
                 event.getWhoClicked().openInventory(new GeneratorListRandomBlock(plugin, generator, getPage()).getInventory());
             });
-        }
-        else if (event.isRightClick()) {
+        } else if (event.isRightClick()) {
             plugin.getConfigManager().setConfig(config -> config.set("generators." + generator.getId() + ".random." + content.getKey(), null));
             generator.removeRandomBlock(content.getKey());
             event.getWhoClicked().openInventory(new GeneratorListRandomBlock(plugin, generator, getPage()).getInventory());

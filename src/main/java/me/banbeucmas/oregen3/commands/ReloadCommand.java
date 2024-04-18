@@ -8,7 +8,7 @@ public class ReloadCommand extends AbstractCommand {
     Oregen3 plugin;
 
     ReloadCommand(final Oregen3 plugin, final CommandSender sender) {
-        super(plugin,"oregen3.reload", sender, null, null);
+        super(plugin, "oregen3.reload", sender, null, null);
         this.plugin = plugin;
     }
 

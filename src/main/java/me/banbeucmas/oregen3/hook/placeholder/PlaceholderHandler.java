@@ -52,10 +52,14 @@ public class PlaceholderHandler extends PlaceholderExpansion {
     }
 
     @Override
-    public boolean persist() { return true; }
+    public boolean persist() {
+        return true;
+    }
 
     @Override
-    public boolean canRegister() { return true; }
+    public boolean canRegister() {
+        return true;
+    }
 
     @Override
     public String onRequest(final OfflinePlayer player, @NotNull final String identifier) {

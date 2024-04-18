@@ -55,5 +55,6 @@ public class GeneratorMaterialList extends PagedInventory<Map.Entry<String, Doub
     }
 
     @Override
-    public void addOtherIcons() { }
+    public void addOtherIcons() {
+    }
 }

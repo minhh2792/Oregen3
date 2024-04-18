@@ -12,8 +12,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockFromToEvent;
 
 public class BlockListener implements Listener {
-    private Oregen3 plugin;
     private final FileConfiguration config;
+    private Oregen3 plugin;
 
     public BlockListener(final Oregen3 plugin) {
         this.plugin = plugin;
@@ -31,8 +31,7 @@ public class BlockListener implements Listener {
                     && (XBlock.isWater(material))
                     && waterBlock) {
                 return true;
-            }
-            else if (plugin.getBlockChecker().isBlock(check)
+            } else if (plugin.getBlockChecker().isBlock(check)
                     && (XBlock.isLava(material))
                     && lavaBlock) {
                 return true;
@@ -82,8 +81,7 @@ public class BlockListener implements Listener {
                 }
                 event.setCancelled(true);
                 plugin.getBlockEventHandler().generateBlock(to);
-            }
-            else if (canGenerateBlock(source,
+            } else if (canGenerateBlock(source,
                     to,
                     config.getBoolean("mode.waterBlock"),
                     config.getBoolean("mode.lavaBlock"))) {

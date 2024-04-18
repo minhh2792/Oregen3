@@ -22,7 +22,7 @@ public class GeneratorListWorld extends PagedInventory<String> {
     }
 
     public GeneratorListWorld(Oregen3 plugin, Generator generator, int page) {
-        super(new ArrayList<>(generator.getWorldList()), "Edit world ("+ generator.getId() + ") [page %page%]", page);
+        super(new ArrayList<>(generator.getWorldList()), "Edit world (" + generator.getId() + ") [page %page%]", page);
         this.plugin = plugin;
         this.generator = generator;
     }

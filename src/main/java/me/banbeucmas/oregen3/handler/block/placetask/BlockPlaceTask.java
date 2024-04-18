@@ -20,5 +20,6 @@ public abstract class BlockPlaceTask {
 
     public abstract void placeBlock(Block block, BlockPlacer blockPlacer);
 
-    public void stop() {}
+    public void stop() {
+    }
 }

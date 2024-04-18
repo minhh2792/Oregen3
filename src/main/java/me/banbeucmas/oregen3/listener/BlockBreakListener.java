@@ -17,10 +17,10 @@ public class BlockBreakListener implements Listener {
     }
 
     private int checkMode(Block block,
-                              int waterBlock,
-                              int lavaBlock,
-                              int waterLava) {
-        Block[] blocks =  new Block[BlockChecker.FACES.length];
+                          int waterBlock,
+                          int lavaBlock,
+                          int waterLava) {
+        Block[] blocks = new Block[BlockChecker.FACES.length];
         for (int i = 0; i < blocks.length; i++) {
             blocks[i] = block.getRelative(BlockChecker.FACES[i]);
         }
@@ -65,8 +65,7 @@ public class BlockBreakListener implements Listener {
         int delay = checkMode(block, waterBlock, lavaBlock, waterLava);
         if (delay == 0) {
             plugin.getBlockEventHandler().generateBlock(block);
-        }
-        else if (delay > 0) {
+        } else if (delay > 0) {
             plugin.getServer().getScheduler().runTaskLater(plugin,
                     () -> plugin.getBlockEventHandler().generateBlock(block), delay);
         }

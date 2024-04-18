@@ -7,16 +7,15 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class DataManager {
-    private Oregen3 plugin;
-
     @Getter
     private final Map<String, Generator> generators = new LinkedHashMap<>();
+    private Oregen3 plugin;
 
     public DataManager(Oregen3 plugin) {
         this.plugin = plugin;
     }
 
-    public void unregisterAll(){
+    public void unregisterAll() {
         generators.clear();
     }
 

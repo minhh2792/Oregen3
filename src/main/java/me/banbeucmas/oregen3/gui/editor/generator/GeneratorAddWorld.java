@@ -22,7 +22,7 @@ public class GeneratorAddWorld extends PagedInventory<World> {
     }
 
     public GeneratorAddWorld(Oregen3 plugin, Generator generator, int page) {
-        super(Bukkit.getWorlds(), "Edit world ("+ generator.getId() + ") [page %page%]", page);
+        super(Bukkit.getWorlds(), "Edit world (" + generator.getId() + ") [page %page%]", page);
         this.plugin = plugin;
         this.generator = generator;
     }
@@ -60,8 +60,7 @@ public class GeneratorAddWorld extends PagedInventory<World> {
             plugin.getChatListener().addChatAction(event.getWhoClicked(), world -> {
                 if (world.equals("cancel")) {
                     event.getWhoClicked().sendMessage("Cancelled");
-                }
-                else {
+                } else {
                     plugin.getConfigManager().setConfig(config -> {
                         List<String> worlds = config.getStringList("generators." + generator.getId() + ".world.list");
                         worlds.add(world);

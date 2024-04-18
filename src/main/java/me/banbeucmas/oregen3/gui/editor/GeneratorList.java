@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 public class GeneratorList extends PagedInventory<Generator> {
     private Oregen3 plugin;
+
     public GeneratorList(Oregen3 plugin) {
         this(plugin, 1);
     }
@@ -43,8 +44,7 @@ public class GeneratorList extends PagedInventory<Generator> {
             plugin.getChatListener().addChatAction(event.getWhoClicked(), (name) -> {
                 if (name.equals("cancel")) {
                     event.getWhoClicked().sendMessage("Cancelled");
-                }
-                else {
+                } else {
                     plugin.getConfigManager().setConfig((config) ->
                             config.set("generators." + name + ".random.COBBLESTONE", 100));
                 }

@@ -84,14 +84,14 @@ public abstract class PagedInventory<E> implements InventoryHandler {
                         (event) -> {
                             setPage(page + 1);
                             event.getWhoClicked().openInventory(this.getInventory());
-                });
+                        });
             }
             if (page > 1) {
                 setItemWithAction(size - 3, GUICommons.PREVIOUS_PAGE_ICON,
                         (event) -> {
                             setPage(page - 1);
                             event.getWhoClicked().openInventory(this.getInventory());
-                });
+                        });
             }
             for (int i = size - 9; i < size; i++) {
                 if (slots[i] == null)

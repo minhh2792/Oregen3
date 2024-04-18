@@ -34,7 +34,7 @@ public class GeneratorAddRandomBlock extends PagedInventory<Material> {
     }
 
     public GeneratorAddRandomBlock(Oregen3 plugin, Generator generator, int page) {
-        super(BLOCK_MATERIALS, "Choose Block ("+ generator.getId() + ") [page %page%]", page);
+        super(BLOCK_MATERIALS, "Choose Block (" + generator.getId() + ") [page %page%]", page);
         this.plugin = plugin;
         this.generator = generator;
     }
@@ -79,10 +79,10 @@ public class GeneratorAddRandomBlock extends PagedInventory<Material> {
         int slot = getSize() - 9;
         if (Bukkit.getPluginManager().isPluginEnabled("Oraxen")) {
             setItemWithAction(slot, new ItemBuilder(XMaterial.PLAYER_HEAD.parseItem())
-                    .setSkull("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjhiZGM3YTFkNmNmZjc2YTkyNTU2NTJkMzE2NTUzMjI4NWFjYzNhOWQxYzBmMTJmMzljYTAwNzc2OWE3ZWExNCJ9fX0=")
-                    .setName("§2Add Oraxen Block")
-                    .addLore("§7Click to add random Oraxen block")
-                    .build(),
+                            .setSkull("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjhiZGM3YTFkNmNmZjc2YTkyNTU2NTJkMzE2NTUzMjI4NWFjYzNhOWQxYzBmMTJmMzljYTAwNzc2OWE3ZWExNCJ9fX0=")
+                            .setName("§2Add Oraxen Block")
+                            .addLore("§7Click to add random Oraxen block")
+                            .build(),
                     event -> event.getWhoClicked().openInventory(new GeneratorAddRandomOraxen(plugin, generator).getInventory()));
             slot++;
         }

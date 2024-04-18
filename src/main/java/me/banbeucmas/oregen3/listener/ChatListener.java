@@ -15,11 +15,11 @@ import java.util.function.Consumer;
 
 public class ChatListener implements Listener {
     private Oregen3 plugin;
+    private Map<UUID, Consumer<String>> chatActions = new HashMap<>();
+
     public ChatListener(Oregen3 plugin) {
         this.plugin = plugin;
     }
-
-    private Map<UUID, Consumer<String>> chatActions = new HashMap<>();
 
     @EventHandler
     public void onAsyncChat(AsyncPlayerChatEvent event) {

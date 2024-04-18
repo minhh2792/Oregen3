@@ -12,7 +12,7 @@ import java.util.concurrent.ForkJoinPool;
 
 public class PluginUtils {
     private Oregen3 plugin;
-    
+
     public PluginUtils(Oregen3 plugin) {
         this.plugin = plugin;
     }
@@ -21,8 +21,7 @@ public class PluginUtils {
         //TODO: Migrate if check
         if (plugin.getConfig().getBoolean("global.useJavaAsyncScheduler", false)) {
             ForkJoinPool.commonPool().execute(task);
-        }
-        else {
+        } else {
             Bukkit.getScheduler().runTaskAsynchronously(plugin, task);
         }
     }
@@ -108,7 +107,8 @@ public class PluginUtils {
     private Generator getMaterialChooser(final Location loc, Generator mc, final OfflinePlayer p) {
         final double level = plugin.getHook().getIslandLevel(p.getUniqueId(), loc);
         for (final Generator chooser : plugin.getDataManager().getGenerators().values()) {
-            if (chooser.isWorldEnabled() && chooser.getWorldList().contains(loc.getWorld().getName()) == chooser.isWorldBlacklist()) continue;
+            if (chooser.isWorldEnabled() && chooser.getWorldList().contains(loc.getWorld().getName()) == chooser.isWorldBlacklist())
+                continue;
             if (plugin.getPermissionChecker().checkPerm(loc.getWorld().getName(), p, chooser.getPermission())
                     && chooser.getPriority() >= mc.getPriority()
                     && level >= chooser.getLevel()) {

@@ -20,11 +20,11 @@ mode:
 
 # Also supports cross-version material names (ex: FENCE or OAK_FENCE all works)
 blocks:
-- FENCE
-- ACACIA_FENCE
-- BIRCH_FENCE
-- DARK_OAK_FENCE
-- IRON_FENCE
+  - FENCE
+  - ACACIA_FENCE
+  - BIRCH_FENCE
+  - DARK_OAK_FENCE
+  - IRON_FENCE
 
 # The plugin will try to find a skyblock plugin to enable owner's permission feature
 enableDependency: true
@@ -43,7 +43,7 @@ hooks:
     forceAsync: false
     # A plugin list that store permission data asynchronously (using database, ...) or you can list other plugins
     pluginAsyncList:
-    - LuckPerms
+      - LuckPerms
 
 global:
   # Switch between Bukkit or Java async scheduler (Java is faster but "might" cause some issues)
@@ -70,8 +70,8 @@ global:
       enabled: false
       blacklist: true
       list:
-      - world1
-      - world2
+        - world1
+        - world2
     sound:
       enabled: false
       name: BLOCK_FIRE_EXTINGUISH
@@ -85,9 +85,9 @@ generators:
     # Generator name that will be shown in placeholders
     name: "My default"
     random:
-    # Example for oraxen/itemsadder support: "plugin"-"blockID"
-    # oraxen-ruby_ore: 10
-    # itemsadder-example_block: 10
+      # Example for oraxen/itemsadder support: "plugin"-"blockID"
+      # oraxen-ruby_ore: 10
+      # itemsadder-example_block: 10
       COBBLESTONE: 30.0
       GOLD_BLOCK: 20.0
       IRON_BLOCK: 15.0
@@ -111,8 +111,8 @@ generators:
     world:
       blacklist: true
       list:
-      - world1
-      - world2
+        - world1
+        - world2
   mvp:
     priority: 3
     random:
@@ -127,8 +127,8 @@ generators:
     world:
       blacklist: true
       list:
-      - world1
-      - world2
+        - world1
+        - world2
 
 # Available placeholder for messages:
 # - noPermission: %perm%
@@ -148,7 +148,7 @@ messages:
     title: "&eChances"
     block:
       lore:
-      - "&6Chances: &e%chance%&6%"
+        - "&6Chances: &e%chance%&6%"
   noIsland: "&cYou must on an island to view this."
   noIslandOthers: "&c%player% must on an island to view this."
   missingArgs: "&cMissing arguments"

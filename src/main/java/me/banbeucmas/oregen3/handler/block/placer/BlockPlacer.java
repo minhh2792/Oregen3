@@ -3,8 +3,6 @@ package me.banbeucmas.oregen3.handler.block.placer;
 import org.bukkit.block.Block;
 
 public interface BlockPlacer {
-    void placeBlock(Block block);
-
     static BlockPlacer getBlockPlacer(String mat) {
         if (mat.startsWith("oraxen-")) {
             return new OraxenBlockPlacer(mat.substring(7));
@@ -15,4 +13,6 @@ public interface BlockPlacer {
             return new VanillaBlockPlacer(mat);
         }
     }
+
+    void placeBlock(Block block);
 }

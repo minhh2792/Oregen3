@@ -56,8 +56,7 @@ public class GeneratorSound implements InventoryHandler {
                 plugin.getChatListener().addChatAction(player, (msg) -> {
                     if (msg.equals("cancel")) {
                         player.sendMessage("Cancelled");
-                    }
-                    else {
+                    } else {
                         try {
                             float volume = Float.parseFloat(msg);
                             plugin.getConfigManager().setConfig(config -> plugin.getConfig().set("generators." + generator + ".sound.volume", volume));
@@ -75,8 +74,7 @@ public class GeneratorSound implements InventoryHandler {
                 plugin.getChatListener().addChatAction(player, (msg) -> {
                     if (msg.equals("cancel")) {
                         player.sendMessage("Cancelled");
-                    }
-                    else {
+                    } else {
                         try {
                             float pitch = Float.parseFloat(msg);
                             plugin.getConfigManager().setConfig(config -> plugin.getConfig().set("generators." + generator + ".sound.pitch", pitch));

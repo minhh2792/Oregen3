@@ -74,8 +74,7 @@ public class GeneratorMenu implements InventoryHandler {
                     plugin.getChatListener().addChatAction(player, (perm) -> {
                         if (perm.equals("cancel")) {
                             player.sendMessage("Cancelled");
-                        }
-                        else {
+                        } else {
                             plugin.getConfigManager().setConfig(config -> config.set("generators." + generator.getId() + ".permission", perm));
                         }
                         player.openInventory(new GeneratorMenu(plugin, generator).getInventory());
@@ -118,8 +117,7 @@ public class GeneratorMenu implements InventoryHandler {
                     plugin.getChatListener().addChatAction(player, (level) -> {
                         if (level.equals("cancel")) {
                             player.sendMessage("Cancelled");
-                        }
-                        else {
+                        } else {
                             try {
                                 plugin.getConfigManager().setConfig(config ->
                                         config.set("generators." + generator.getId() + ".level", Double.parseDouble(level)));

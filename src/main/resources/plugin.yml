@@ -2,13 +2,13 @@ name: Oregen3
 version: ${version}
 main: me.banbeucmas.oregen3.Oregen3
 api-version: 1.13
-authors: [Banbeucmas, xHexed]
-softdepend: [ASkyBlock, AcidIsland, BentoBox, uSkyBlock, SuperiorSkyblock2, FabledSkyBlock, IridiumSkyblock, PlaceholderAPI, Vault, Oraxen, ItemsAdder]
+authors: [ Banbeucmas, xHexed ]
+softdepend: [ SuperiorSkyblock2, PlaceholderAPI, Vault, Oraxen, ItemsAdder ]
 
 commands:
   oregen3:
     description: "Main command of the plugin"
-    aliases: [og3, og, oregen]
+    aliases: [ og3, og, oregen ]
 
 permissions:
   oregen3.information:

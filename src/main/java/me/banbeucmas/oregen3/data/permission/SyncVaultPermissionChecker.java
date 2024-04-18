@@ -14,8 +14,7 @@ public class SyncVaultPermissionChecker implements PermissionChecker {
     public boolean checkPerm(final String world, final OfflinePlayer player, final String permission) {
         if (player.isOnline()) {
             return plugin.getPerm().playerHas(player.getPlayer(), permission);
-        }
-        else {
+        } else {
             return plugin.getPerm().playerHas(world, player, permission);
         }
     }
